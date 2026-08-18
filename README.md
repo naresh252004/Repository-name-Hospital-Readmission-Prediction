@@ -1,0 +1,234 @@
+# 🏥 Hospital Readmission Prediction
+
+## 📌 Project Overview
+
+Hospital readmission is an important challenge in healthcare. This project uses **Machine Learning** to predict whether a diabetic patient is likely to be **readmitted to the hospital within 30 days** based on historical patient and hospital information.
+
+The project uses the **Diabetes 130-US Hospitals** dataset and applies data preprocessing, machine learning classification, model evaluation, and patient risk prediction.
+
+> **Note:** This project is for educational and portfolio purposes only. The model is not clinically validated and should not be used for real medical decisions.
+
+## 🎯 Objectives
+
+- Analyze historical hospital patient data.
+- Identify useful features related to hospital readmission.
+- Preprocess numerical and categorical data.
+- Train machine learning classification models.
+- Compare model performance using multiple evaluation metrics.
+- Predict the probability of readmission within 30 days.
+- Classify patients into Low, Medium, or High project-defined risk levels.
+- Provide a simple Streamlit interface for making predictions.
+
+## 📊 Dataset
+
+The project uses the **Diabetes 130-US Hospitals for Years 1999–2008** dataset.
+
+The dataset contains approximately **101,766 hospital encounters** and **50 columns**.
+
+Some features used in this project include:
+
+- Age
+- Gender
+- Race
+- Admission type
+- Discharge disposition
+- Admission source
+- Time spent in hospital
+- Number of laboratory procedures
+- Number of procedures
+- Number of medications
+- Number of outpatient visits
+- Number of emergency visits
+- Number of inpatient visits
+- Number of diagnoses
+- Medication change
+- Diabetes medication
+
+### Target Variable
+
+The original `readmitted` column contains:
+
+- `NO`
+- `>30`
+- `<30`
+
+For this project:
+
+```text
+<30  → 1 (Readmitted within 30 days)
+NO   → 0
+>30  → 0
+```
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Joblib
+- Streamlit
+- Google Colab
+- GitHub
+
+## 🔄 Project Workflow
+
+```text
+Dataset
+   ↓
+Data Understanding
+   ↓
+Feature Selection
+   ↓
+Data Preprocessing
+   ↓
+Train/Test Split
+   ↓
+Machine Learning Models
+   ↓
+Model Evaluation
+   ↓
+Best Model Selection
+   ↓
+Readmission Probability
+   ↓
+Risk Level Prediction
+   ↓
+Streamlit Application
+```
+
+## 🤖 Machine Learning Models
+
+Two machine learning models are trained and compared:
+
+### 1. Logistic Regression
+
+Used as a classification model to predict whether a patient belongs to the readmission class.
+
+### 2. Random Forest
+
+An ensemble learning algorithm that combines multiple decision trees to make predictions.
+
+The models are compared using:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+
+The model with the better **ROC-AUC** score is selected as the final model.
+
+## ⭐ Additional Features
+
+### 1. Patient Risk Score
+
+Instead of providing only a binary prediction, the project also calculates the model's estimated readmission probability.
+
+Example:
+
+```text
+Readmission Probability: 72%
+Risk Level: HIGH
+```
+
+Project-defined thresholds:
+
+```text
+0% – <30%   → LOW
+30% – <60%  → MEDIUM
+60% – 100%  → HIGH
+```
+
+These thresholds are defined for this portfolio project and are **not clinical risk standards**.
+
+### 2. Streamlit Prediction Application
+
+A simple web interface allows users to enter patient information and receive:
+
+- Readmission probability
+- Risk level
+- Readmission prediction
+
+The application uses the trained machine learning model saved with Joblib.
+
+## 📁 Project Structure
+
+```text
+Hospital-Readmission-Prediction/
+│
+├── Hospital_Readmission_Prediction_2_0_CORRECTED.ipynb
+├── app.py
+├── requirements.txt
+└── README.md
+```
+
+## ▶️ How to Run
+
+### Google Colab
+
+1. Open the `.ipynb` file using Google Colab.
+2. Run the notebook cells from top to bottom.
+3. The notebook automatically downloads the dataset.
+4. Train and evaluate the machine learning models.
+5. Test the patient prediction feature.
+
+### Run Streamlit Locally
+
+Install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+Then run:
+
+```bash
+streamlit run app.py
+```
+
+The Streamlit application will open in your browser.
+
+## 📈 Model Evaluation
+
+The project evaluates the trained models using:
+
+| Metric | Purpose |
+|---|---|
+| Accuracy | Overall prediction correctness |
+| Precision | Correctness of positive predictions |
+| Recall | Ability to identify positive cases |
+| F1-Score | Balance between precision and recall |
+| ROC-AUC | Ability to distinguish between classes |
+
+The actual scores are generated when the notebook is executed.
+
+## 🔮 Future Improvements
+
+- Hyperparameter tuning
+- Additional machine learning models
+- Feature importance visualization
+- Explainable AI using SHAP
+- Interactive data visualization
+- Improved Streamlit dashboard
+- Model deployment
+- Better probability calibration
+- Cross-validation and more extensive model evaluation
+
+## ⚠️ Disclaimer
+
+This project is developed for **educational and portfolio purposes**.
+
+The predictions generated by this model should **not** be considered medical advice or a clinical diagnosis. The model has not been clinically validated or approved for healthcare decision-making.
+
+## 👨‍💻 Author
+
+**Dasari Naresh**
+
+B.Tech – Artificial Intelligence & Data Science
+
+## ⭐ Project Note
+
+This project is intended to demonstrate practical skills in data preprocessing, machine learning, model evaluation, and application development.
